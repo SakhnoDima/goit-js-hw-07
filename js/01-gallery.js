@@ -38,9 +38,10 @@ event.preventDefault();
 if(event.target.nodeName !== "IMG"){
     return
 }
+//?==============================================================
 
 const originalLinkOfImage = event.target.dataset.source;
-//?==============================================================
+
 const instance = basicLightbox.create(`
     <img src="${originalLinkOfImage}" width="800" height="600">
 `)
