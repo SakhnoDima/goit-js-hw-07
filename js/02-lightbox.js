@@ -9,12 +9,12 @@ galleryBox : document.querySelector(".gallery")
 function createImageGalleryItems(params){
 return params
 .map(({description, original, preview}) => {
-return ` <li class="gallery__item">
+return `
     <a class="gallery__link" href="${original}">
       <img class="gallery__image" src="${preview}" 
       alt="${description}" />
     </a>
-</li>
+
 `;
 
 })
@@ -24,23 +24,10 @@ return ` <li class="gallery__item">
 const imageGallery = createImageGalleryItems(galleryItems);
 refs.galleryBox.innerHTML = imageGallery;
 //?=========================================================
-refs.galleryBox.addEventListener( "click", onImageClick)
 
-function onImageClick (event){
-event.preventDefault();
-//?=======
-if(event.target.nodeName === "A"){
-    return
-}
-
-//?======
 
 var lightbox = new SimpleLightbox('.gallery a', {
     captionsData:	'alt',
     captionPosition:  'bottom',
     captionDelay:	250,
 });
-
-
-}
-
