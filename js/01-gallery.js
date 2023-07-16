@@ -49,10 +49,12 @@ instance.show()
 
 //?==============================================================
 refs.galleryBox.addEventListener("keydown", closeModalFromKeyboard)
+
 function closeModalFromKeyboard (event){
   
     if(event.code === "Escape"){
         instance.close();
+        refs.galleryBox.removeEventListener("keydown", closeModalFromKeyboard)
     }
 }
 }
